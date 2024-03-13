@@ -23,29 +23,31 @@ const Formulario = props => {
     const handleName = (e) => {
         setUsername(e.target.value);
         if(e.target.value.length < 1) {
-            setNameError("Name is required!");
+            setNameError("¡El nombre es obligatorio!");
         } else if(e.target.value.length < 3) {
-            setNameError("Name must be 3 characters or longer!");
+            setNameError("¡El nombre debe tener al menos 3 caracteres!");
         } else {
             setNameError("");
         }
     }
+
     const handleApellido = (e) => {
         setApellido(e.target.value);
         if(e.target.value.length < 1) {
-            setApellidoError("Surname is required!");
+            setApellidoError("¡El apellido es obligatorio!");
         } else if(e.target.value.length < 3) {
-            setApellidoError("Surname must be 3 characters or longer!");
+            setApellidoError("¡El apellido debe tener al menos 3 caracteres!");
         } else {
             setApellidoError("");
         }
     }
+
     const handleEmail = (e) => {
         setEmail(e.target.value);
         if(e.target.value.length < 5) {
-            setEmailError("Email is required!");
+            setEmailError("¡El correo electrónico es obligatorio!");
         } else if(!e.target.value.includes("@") || !e.target.value.includes(".com") || e.target.value.length < 5 || e.target.value.includes(" ")) {
-            setEmailError("Email must be valid!");
+            setEmailError("¡El correo electrónico debe ser válido!");
         } else {
             setEmailError("");
         }
@@ -54,9 +56,9 @@ const Formulario = props => {
     const handlePassword = (e) => {
         setPassword(e.target.value);
         if(e.target.value.length < 1) {
-            setPasswordError("Password is required!");
+            setPasswordError("¡La contraseña es obligatoria!");
         } else if(e.target.value.length < 8) {
-            setPasswordError("Password must be 8 characters or longer!");
+            setPasswordError("¡La contraseña debe tener al menos 8 caracteres!");
         } else {
             setPasswordError("");
         }
@@ -64,7 +66,7 @@ const Formulario = props => {
 
     const handlePasswordConfirm = (e) => {
         if(e.target.value !== password) {
-            setConfirmPasswordError("Passwords must match!");
+            setConfirmPasswordError("¡Las contraseñas deben coincidir!");
         } else {
             setConfirmPasswordError("");
         }
@@ -121,7 +123,7 @@ const Formulario = props => {
                 {passwordError ? <p style={{color:'red'}}>{ passwordError }</p> : ''}
             </div>
             <div className='inputContainer'>
-                <label className='labell' htmlFor="confirmPassword">Confirm password</label>
+                <label className='labell' htmlFor="confirmPassword">Confirmar contraseña</label>
                 <input 
                     type="password"
                     name='confirmPassword'

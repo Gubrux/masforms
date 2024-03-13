@@ -13,7 +13,7 @@ function App() {
   return(
     <div>
       <Formulario inputs={state} setInputs={setState}/>
-      <Resultados data={state}/>
+      {/* <Resultados data={state}/> */}
     </div>
   )
 }
