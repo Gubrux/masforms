@@ -65,8 +65,8 @@ const Formulario = props => {
     }
 
     const handlePasswordConfirm = (e) => {
-        if(e.target.value !== password) {
-            setConfirmPasswordError("¡Las contraseñas deben coincidir!");
+        if(e.target.value !== password && e.target.value.length < 8) {
+            setConfirmPasswordError("¡Contraseña invalida!");
         } else {
             setConfirmPasswordError("");
         }

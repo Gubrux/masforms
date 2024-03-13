@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Formulario from './components/Formulario';
-import Resultados from './components/Resultados';
 
 function App() {
   const [state, setState] = useState({
@@ -13,7 +12,6 @@ function App() {
   return(
     <div>
       <Formulario inputs={state} setInputs={setState}/>
-      {/* <Resultados data={state}/> */}
     </div>
   )
 }
